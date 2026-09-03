@@ -5,3 +5,9 @@ module "vpc" {
   vpc_tenency    = "default"
   vpc_name       = "Prod-vpc"
 }
+module "s3" {
+  source = "../../modules/s3"
+
+  s3_bucket_name      = "terraform-prod-bucket"
+  s3_bucket_tags_name = "Prod-bucket"
+}

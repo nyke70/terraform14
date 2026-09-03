@@ -1,5 +1,5 @@
 data "aws_acm_certificate" "wildcard" {
-  domain   = "*.nyke.it.com"
+  domain   = var.cert_domain
   statuses = ["ISSUED"]
   most_recent = true
 }
@@ -20,3 +20,7 @@ data "aws_iam_policy_document" "s3_oac_policy" {
     }
   }
 }
+data "aws_route53_zone" "primary" {
+  name         = "${var.hosted_zone_name}"
+  private_zone = false
+  }

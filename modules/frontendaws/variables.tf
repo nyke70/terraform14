@@ -15,3 +15,5 @@ variable "dns_record" {}
 variable "cert_domain" {
   default = "*.nyke.it.com"
 }
+variable "hosted_zone_name" {
+}
